@@ -14,8 +14,6 @@ mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 app.use(express.json());
 app.use("/", apiRoutes);
 
-console.log(uri);
-
 app.listen(8000, () => {
   console.log("8000 port is listening");
 });
