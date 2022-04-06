@@ -1,4 +1,4 @@
-const Appointment = require("../../db/models/user/index.js");
+const Appointment = require("../../db/models/appointment/index.js");
 require("dotenv").config();
 const secret = process.env.secret;
 const jwt = require("jsonwebtoken");
