@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const { Schema, model } = mongoose;
 
-const appointmentSchema = new Schema({
+const receptionSchema = new Schema({
   userName: {
     type: String,
     required: true,
@@ -21,7 +21,7 @@ const appointmentSchema = new Schema({
   },
 });
 
-module.exports = Appointment = mongoose.model(
-  "appointments",
-  appointmentSchema
+module.exports = Reception = mongoose.model(
+  "receptions",
+  receptionSchema
 );
