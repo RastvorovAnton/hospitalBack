@@ -19,6 +19,9 @@ const appointmentSchema = new Schema({
     type: String,
     required: true,
   },
+  userId:{
+    type:String,
+  }
 });
 
 module.exports = Appointment = mongoose.model(
