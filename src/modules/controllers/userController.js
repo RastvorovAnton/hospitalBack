@@ -10,7 +10,6 @@ const generateTrueToken = (_id, email) => {
     id: _id,
     email,
   };
-
   return jwt.sign(payload, secret, { expiresIn: "24h" });
 };
 

@@ -3,9 +3,11 @@ const router = express.Router();
 const { check } = require("express-validator");
 
 const {
-  getAllAppointments
+  getAllAppointments,
+  createAppointment
 } = require("../controllers/appointmentController.js");
 
 router.get("/allAppointments", getAllAppointments);
+router.post("/createAppointment", createAppointment);
 
 module.exports = router;
