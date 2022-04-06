@@ -6,7 +6,7 @@ const {
   getAllUsers,
   createNewUser,
   enterUser,
-} = require("../controllers/user.controller");
+} = require("../controllers/userController");
 
 router.get("/allUsers", getAllUsers);
 router.post(
