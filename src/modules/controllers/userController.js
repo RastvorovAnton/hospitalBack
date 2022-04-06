@@ -2,10 +2,10 @@ const User = require("../../db/models/user/index.js");
 const bcrypt = require("bcryptjs");
 const { validationResult } = require("express-validator");
 const jwt = require("jsonwebtoken");
-const { secret } = require("./config");
 require("dotenv").config();
 
 const generateTrueToken = (_id, email) => {
+  const secret = process.env.secret
   const payload = {
     id: _id,
     email,
