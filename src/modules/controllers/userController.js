@@ -44,6 +44,7 @@ module.exports.enterUser = async (req, res) => {
     return res.status(400).send("Bad request! Write wrong data!");
   }
 };
+
 module.exports.createNewUser = async (req, res) => {
   if (req.body) {
     const errors = validationResult(req);
