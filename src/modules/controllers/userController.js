@@ -36,7 +36,7 @@ module.exports.enterUser = async (req, res) => {
         return res.status(422).send({ message: "Password not correct!" });
       }
       const token = generateTrueToken(user._id);
-      return res.send(token);
+      return res.json({ token, user });
     } else {
       return res.status(420).send("Wrong body!");
     }
