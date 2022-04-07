@@ -5,7 +5,7 @@ const jwt = require("jsonwebtoken");
 require("dotenv").config();
 
 const generateTrueToken = (_id, email) => {
-  const secret = process.env.secret
+  const secret = process.env.secret;
   const payload = {
     id: _id,
     email,
@@ -44,6 +44,7 @@ module.exports.enterUser = async (req, res) => {
     return res.status(400).send("Bad request! Write wrong data!");
   }
 };
+
 module.exports.createNewUser = async (req, res) => {
   if (req.body) {
     const errors = validationResult(req);
@@ -67,7 +68,7 @@ module.exports.createNewUser = async (req, res) => {
       user.save().then(async (result) => {
         const trueUser = await User.findOne({ email });
         const token = generateTrueToken(trueUser._id);
-        return res.json({token, user});
+        return res.json({ token, user });
       });
     } else {
       res.status(422).send("Error! Wrong body");
