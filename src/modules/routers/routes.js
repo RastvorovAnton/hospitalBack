@@ -5,6 +5,7 @@ const { check } = require("express-validator");
 const {
   getAllUsers,
   createNewUser,
+  enterUser,
 } = require("../controllers/userController");
 
 router.get("/allUsers", getAllUsers);
@@ -19,4 +20,5 @@ router.post(
   ],
   createNewUser
 );
+router.post("/enterUser", enterUser);
 module.exports = router;

@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-
 const { Schema, model } = mongoose;
 
 const appointmentSchema = new Schema({
@@ -12,13 +11,16 @@ const appointmentSchema = new Schema({
     required: true,
   },
   date: {
-    type: Date,
+    type: String,
     required: true,
   },
   complaint: {
     type: String,
     required: true,
   },
+  userId:{
+    type:String,
+  }
 });
 
 module.exports = Appointment = mongoose.model(
