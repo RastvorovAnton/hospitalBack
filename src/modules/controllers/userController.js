@@ -35,7 +35,7 @@ module.exports.enterUser = async (req, res) => {
         return res.status(422).send({ message: "Password not correct!" });
       }
       const token = generateTrueToken(user._id);
-      return res.send(token);
+      return res.json({ token, user });
     } else {
       return res.status(420).send("Wrong body!");
     }
@@ -43,6 +43,7 @@ module.exports.enterUser = async (req, res) => {
     return res.status(400).send("Bad request! Write wrong data!");
   }
 };
+
 module.exports.createNewUser = async (req, res) => {
   if (req.body) {
     const errors = validationResult(req);
@@ -66,7 +67,7 @@ module.exports.createNewUser = async (req, res) => {
       user.save().then(async (result) => {
         const trueUser = await User.findOne({ email });
         const token = generateTrueToken(trueUser._id);
-        res.send(token);
+        return res.json({ token, user });
       });
     } else {
       res.status(422).send("Error! Wrong body");
